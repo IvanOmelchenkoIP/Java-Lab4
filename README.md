@@ -14,7 +14,7 @@
 
 **Ієрархія вказаних об’єктів:**
 
-![diagram](https://github.com/IvanOmelchenkoIP/Java-Lab4/blob/master/md_files/diagram.PNG)
+![diagram](https://github.com/IvanOmelchenkoIP/Java-Lab4/blob/main/md_files/diagram.png)
 
 В ході виконання роботи ієрархія може бути доопрацьована.
 
