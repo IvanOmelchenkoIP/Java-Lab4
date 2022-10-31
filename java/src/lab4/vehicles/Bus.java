@@ -8,46 +8,32 @@ public final class Bus<T extends Person> extends Vehicle<T> {
 
 	private static final int MIN_BUS_SEATS = 16;
 	
-	private int maxSeats;
-	private ArrayList<T> passangers;
-	
 	public Bus(int seats) {
-		maxSeats = createSeats(seats);
-		passangers = new ArrayList<T>();
+		super(createSeats(seats));
 	}
 	
-	private int createSeats(int requested) {
-		return requested < Bus.MIN_BUS_SEATS ? Bus.MIN_BUS_SEATS : requested;
+	protected static int createSeats(int reqSeats) {
+		return reqSeats < Bus.MIN_BUS_SEATS ? Bus.MIN_BUS_SEATS : reqSeats;
 	}
 
 	@Override
 	public void addPassanger(T passanger) {
-		if (passangers.size() >= maxSeats) {
-			throw new Error();
-		}
-		
-		passangers.add((T) passanger);		
+		super.addPassanger(passanger);
 	}
 
 	@Override
 	public void removePassanger(String passangerData) {
-		for(T passanger : passangers) {
-			if (passanger.getPersonData() == passangerData) {
-				passangers.remove(passanger);
-				return;
-			}
-		}
-		throw new Error();
+		super.removePassanger(passangerData);
 	}
 
 	@Override
 	public int getMaxSeats() {
-		return maxSeats;
+		return super.getMaxSeats();
 	}
 
 	@Override
 	public int getTakenSeats() {
-		return passangers.size();
+		return super.getTakenSeats();
 	} 
 	
 }

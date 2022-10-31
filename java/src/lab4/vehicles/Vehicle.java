@@ -1,14 +1,42 @@
 package lab4.vehicles;
 
+import java.util.ArrayList;
+
 import lab4.persons.Person;
 
-public abstract class Vehicle<T extends Person> {
-
-	public abstract int getMaxSeats();
+abstract class Vehicle<T extends Person> {
 	
-	public abstract int getTakenSeats();
+	private int maxSeats;
+	private ArrayList<T> passangers;
 	
-	public abstract void removePassanger(String passangerData);
+	Vehicle(int seats) {
+		maxSeats = seats;
+		passangers = new ArrayList<T>();
+	}
 
-	public abstract void addPassanger(T passanger);
+	public void addPassanger(T passanger) {
+		if (passangers.size() >= maxSeats) {
+			throw new Error();
+		}
+		
+		passangers.add((T) passanger);		
+	}
+
+	public void removePassanger(String passangerData) {
+		for(T passanger : passangers) {
+			if (passanger.getPersonData() == passangerData) {
+				passangers.remove(passanger);
+				return;
+			}
+		}
+		throw new Error();
+	}
+
+	public int getMaxSeats() {
+		return maxSeats;
+	}
+
+	public int getTakenSeats() {
+		return passangers.size();
+	} 
 }
