@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import lab4.persons.Person;
 
-abstract class Vehicle<T extends Person> {
+public abstract class Vehicle<T extends Person> {
 	
 	private int maxSeats;
 	private ArrayList<T> passangers;
