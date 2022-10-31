@@ -1,4 +1,5 @@
 package lab4;
+
 import lab4.persons.*;
 import lab4.vehicles.*;
 import lab4.road.*;
@@ -20,7 +21,8 @@ public class Main {
 		System.out.println(bus1.getTakenSeats());
 		
 		Firetruck<Firefighter> firetruck1 = new Firetruck<Firefighter>(20);
-		//firetruck1.addPassanger(p2);
+		firetruck1.addPassanger((Firefighter)p2);
+		System.out.println(firetruck1.getTakenSeats());
 		
 		Policecar<Policeman> policecar1 = new Policecar<Policeman>(20);
 		policecar1.addPassanger(p3);
@@ -28,6 +30,7 @@ public class Main {
 		
 		Road road = new Road();
 		road.addVehicleToRoad(bus1);
+		road.addVehicleToRoad(firetruck1);
 		road.addVehicleToRoad(policecar1);
 		System.out.println(road.getCountOfHumans());
 	}

@@ -1,7 +1,5 @@
 package lab4.vehicles;
 
-import java.util.ArrayList;
-
 import lab4.persons.Person;
 
 abstract class Car<T extends Person> extends Vehicle<T> {

@@ -1,7 +1,5 @@
 package lab4.vehicles;
 
-import java.util.ArrayList;
-
 import lab4.persons.Person;
 
 public final class Bus<T extends Person> extends Vehicle<T> {

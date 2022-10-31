@@ -19,7 +19,7 @@ public abstract class Vehicle<T extends Person> {
 			throw new Error();
 		}
 		
-		passangers.add((T) passanger);		
+		passangers.add(passanger);		
 	}
 
 	public void removePassanger(String passangerData) {
