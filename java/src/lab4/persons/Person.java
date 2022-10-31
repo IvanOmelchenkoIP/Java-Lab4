@@ -5,6 +5,8 @@ public class Person {
 	private String firstname;
 	private String lastname;
 	
+	private boolean isPassanger = false; 
+	
 	public Person(String fname, String lname) { 
 		firstname = fname;
 		lastname = lname;
@@ -13,6 +15,18 @@ public class Person {
 	public String getPersonData() {
 		String person = firstname + " " + lastname;
 		return person;
+	}
+	
+	public boolean getPassangerActive() {
+		return isPassanger;
+	}
+	
+	public void setPassangerActive() {
+		isPassanger = true;
+	}
+	
+	public void setPassangerInactive() {
+		isPassanger = false;
 	}
 	
 }
