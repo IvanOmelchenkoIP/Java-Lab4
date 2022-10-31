@@ -5,14 +5,16 @@ import lab4.vehicles.*;
 
 public class Road {
 
-	private ArrayList<Vehicle> cars = new ArrayList<Vehicle>();
+	private ArrayList<Vehicle<?>> vehicles = new ArrayList<Vehicle<?>>();
 	
 	public int getCountOfHumans() {
-		return 0;
+		int humanCount = 0;
+		for (Vehicle<?> vehicle : vehicles) humanCount += vehicle.getTakenSeats();
+		return humanCount;
 	}
 	
-	public void addCarToRoad() {
-		
+	public void addVehicleToRoad(Vehicle<?> vehicle) {
+		vehicles.add(vehicle);
 	}
 	
 }
