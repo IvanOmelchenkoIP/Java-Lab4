@@ -19,12 +19,15 @@ public abstract class Vehicle<T extends Person> {
 			throw new Error();
 		}
 		
+		if (passanger.isPassangerActive()) return;
+		passanger.setPassangerActive();		
 		passangers.add(passanger);		
 	}
 
 	public void removePassanger(String passangerData) {
 		for(T passanger : passangers) {
 			if (passanger.getPersonData() == passangerData) {
+				passanger.setPassangerInactive();
 				passangers.remove(passanger);
 				return;
 			}

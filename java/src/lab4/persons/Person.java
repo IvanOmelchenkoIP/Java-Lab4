@@ -17,7 +17,7 @@ public class Person {
 		return person;
 	}
 	
-	public boolean getPassangerActive() {
+	public boolean isPassangerActive() {
 		return isPassanger;
 	}
 	
