@@ -1,6 +1,7 @@
 package lab4.vehicles;
+import lab4.persons.Firefighter;
 
-public class Firetruck extends Car {
+public class Firetruck<T extends Firefighter> extends Car<T> {
 
 	@Override
 	public int getMaxSeats() {
@@ -15,13 +16,13 @@ public class Firetruck extends Car {
 	}
 
 	@Override
-	public void addPassanger() {
+	public void removePassanger(String passangerData) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void removePassanger(String passangerData) {
+	public void addPassanger(T passanger) {
 		// TODO Auto-generated method stub
 		
 	}

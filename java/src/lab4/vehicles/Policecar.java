@@ -1,6 +1,8 @@
 package lab4.vehicles;
 
-public class Policecar extends Car {
+import lab4.persons.Policeman;
+
+public class Policecar<T extends Policeman> extends Car<T> {
 
 	@Override
 	public int getMaxSeats() {
@@ -15,13 +17,13 @@ public class Policecar extends Car {
 	}
 
 	@Override
-	public void addPassanger() {
+	public void removePassanger(String passangerData) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void removePassanger(String passangerData) {
+	public void addPassanger(T passanger) {
 		// TODO Auto-generated method stub
 		
 	}

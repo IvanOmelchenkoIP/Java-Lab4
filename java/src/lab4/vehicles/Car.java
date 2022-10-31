@@ -1,17 +1,14 @@
 package lab4.vehicles;
 
-public abstract class Car extends Vehicle {
+import lab4.persons.Person;
 
-	@Override
+public abstract class Car<T extends Person> extends Vehicle<T> {
+	
 	public abstract int getMaxSeats();
-
-	@Override
+	
 	public abstract int getTakenSeats();
-
-	@Override
-	public abstract void addPassanger();
-
-	@Override
+	
 	public abstract void removePassanger(String passangerData);
 
+	public abstract void addPassanger(T passanger);
 }

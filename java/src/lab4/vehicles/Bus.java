@@ -1,20 +1,8 @@
 package lab4.vehicles;
 
-public final class Bus extends Vehicle {
-	
-	private static final int seats = 36;
+import lab4.persons.Person;
 
-	@Override
-	public void addPassanger() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void removePassanger(String passangerData) {
-		// TODO Auto-generated method stub
-		
-	}
+public final class Bus<T extends Person> extends Vehicle<T> {
 
 	@Override
 	public int getMaxSeats() {
@@ -26,5 +14,18 @@ public final class Bus extends Vehicle {
 	public int getTakenSeats() {
 		// TODO Auto-generated method stub
 		return 0;
-	} 
+	}
+
+	@Override
+	public void removePassanger(String passangerData) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void addPassanger(T passanger) {
+		// TODO Auto-generated method stub
+		
+	}
+	
 }
