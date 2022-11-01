@@ -22,20 +22,13 @@ jobs:
         working-directory: ./java/src
         run: javac ./lab4/exceptions/PassangerBusyException.java ./lab4/exceptions/PassangerNotInVehicleException.java ./lab4/exceptions/VehicleEmptyException.java ./lab4/exceptions/VehicleFullException.java ./lab4/persons/Person.java ./lab4/persons/Policeman.java ./lab4/persons/Firefighter.java ./lab4/vehicles/Vehicle.java ./lab4/vehicles/Bus.java ./lab4/vehicles/Car.java ./lab4/vehicles/Firetruck.java ./lab4/vehicles/Policecar.java ./lab4/vehicles/Taxi.java ./lab4/road/Road.java ./lab4/Main.java
 
-      - name: Test Persons
+      - name: Test
         working-directory: ./java
         run: |
          javac -cp "./testing/junit-platform-console-standalone-1.9.0.jar"  ./src/lab4/persons/Person.java ./src/lab4/persons/Policeman.java ./src/lab4/persons/Firefighter.java ./src/lab4/tests/PersonsTests.java
          java -jar ./testing/junit-platform-console-standalone-1.9.0.jar -cp "./src" --select-class lab4.tests.PersonsTests
-
-      - name: Test Vehicles
-        working-directory: ./java
-        run: |
          javac -cp "./testing/junit-platform-console-standalone-1.9.0.jar" ./src/lab4/exceptions/PassangerBusyException.java ./src/lab4/exceptions/PassangerNotInVehicleException.java ./src/lab4/exceptions/VehicleEmptyException.java ./src/lab4/exceptions/VehicleFullException.java ./src/lab4/persons/Person.java ./src/lab4/persons/Policeman.java ./src/lab4/persons/Firefighter.java ./src/lab4/vehicles/Vehicle.java ./src/lab4/vehicles/Bus.java ./src/lab4/vehicles/Car.java ./src/lab4/vehicles/Firetruck.java ./src/lab4/vehicles/Policecar.java ./src/lab4/vehicles/Taxi.java ./src/lab4/tests/VehicleTests.java
          java -jar ./testing/junit-platform-console-standalone-1.9.0.jar -cp "./src" --select-class lab4.tests.VehicleTests
-
-     - name: Test Road
-        working-directory: ./java
-        run: |
          javac -cp "./testing/junit-platform-console-standalone-1.9.0.jar" ./src/lab4/exceptions/PassangerBusyException.java ./src/lab4/exceptions/PassangerNotInVehicleException.java ./src/lab4/exceptions/VehicleEmptyException.java ./src/lab4/exceptions/VehicleFullException.java ./src/lab4/persons/Person.java ./src/lab4/persons/Policeman.java ./src/lab4/persons/Firefighter.java ./src/lab4/vehicles/Vehicle.java ./src/lab4/vehicles/Bus.java ./src/lab4/vehicles/Car.java ./src/lab4/vehicles/Firetruck.java ./src/lab4/vehicles/Policecar.java ./src/lab4/vehicles/Taxi.java ./src/lab4/road/Road.java ./src/lab4/tests/RoadTests.java
          java -jar ./testing/junit-platform-console-standalone-1.9.0.jar -cp "./src" --select-class lab4.tests.RoadTests
+         
