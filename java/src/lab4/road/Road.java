@@ -2,7 +2,7 @@ package lab4.road;
 
 import java.util.ArrayList;
 
-import lab4.exception.VehicleEmptyException;
+import lab4.exceptions.VehicleEmptyException;
 import lab4.vehicles.*;
 
 public class Road {

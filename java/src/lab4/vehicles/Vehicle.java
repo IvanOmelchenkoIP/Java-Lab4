@@ -1,8 +1,8 @@
 package lab4.vehicles;
 
 import java.util.ArrayList;
-import lab4.exception.*;
 
+import lab4.exceptions.*;
 import lab4.persons.Person;
 
 public abstract class Vehicle<T extends Person> {
@@ -26,7 +26,7 @@ public abstract class Vehicle<T extends Person> {
 	} 
 
 	protected void evaluateSeats(String vehicleType, int id) {
-		if (passangers.size() >= maxSeats) throw new VehicleIsFullException(vehicleType + " " + id + " is full! Cannot add more passengers!");
+		if (passangers.size() >= maxSeats) throw new VehicleFullException(vehicleType + " " + id + " is full! Cannot add more passengers!");
 	}
 	
 	public void addPassanger(T passanger) {	

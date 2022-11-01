@@ -6,9 +6,9 @@ import java.util.ArrayList;
 
 import org.junit.jupiter.api.Test;
 
+import lab4.exceptions.*;
 import lab4.persons.*;
 import lab4.vehicles.*;
-import lab4.exception.*;
 
 class VehicleTests {
 
@@ -141,7 +141,7 @@ class VehicleTests {
 		String expected = "Cannot add more passengers";
 		
 		Car<Person> taxi = new Taxi<Person>(8);
-		Exception exception = assertThrows(VehicleIsFullException.class, () -> {
+		Exception exception = assertThrows(VehicleFullException.class, () -> {
 			for (int i = 0; i < 10; i++) {
 				Person person = new Person("Name", "Surname");
 				taxi.addPassanger(person);			

@@ -1,4 +1,4 @@
-package lab4.exception;
+package lab4.exceptions;
 
 public class PassangerBusyException extends RuntimeException {
 
