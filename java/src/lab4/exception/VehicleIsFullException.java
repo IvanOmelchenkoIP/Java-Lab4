@@ -1,6 +1,6 @@
 package lab4.exception;
 
-public class VehicleIsFullException extends RuntimeException {
+public final class VehicleIsFullException extends RuntimeException {
 
 	public VehicleIsFullException() {
 		super();
