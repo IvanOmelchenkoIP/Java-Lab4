@@ -1,6 +1,6 @@
 package lab4.persons;
 
-final public class Policeman extends Person {
+public final class Policeman extends Person {
 	
 	private static final String job = "Policeman";
 

@@ -1,6 +1,6 @@
 package lab4.persons;
 
-final public class Firefighter extends Person {
+public final class Firefighter extends Person {
 	
 	private static final String job = "Firefighter";
 
