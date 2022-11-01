@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import lab4.persons.*;
 
-class PersonsTest {
+class PersonsTests {
 	
 	@Test
 	void TestClassTranslationCorrect() {
