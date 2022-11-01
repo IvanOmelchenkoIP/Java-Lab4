@@ -2,7 +2,7 @@ package lab4.vehicles;
 
 import lab4.persons.Person;
 
-abstract class Car<T extends Person> extends Vehicle<T> {
+public abstract class Car<T extends Person> extends Vehicle<T> {
 	
 	private final static int MIN_CAR_SEATS = 1;
 	private final static int MAX_CAR_SEATS = 8; 

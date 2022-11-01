@@ -4,7 +4,7 @@ import lab4.persons.Person;
 
 public class Taxi<T extends Person> extends Car<T> {
 
-	private static final String VEHICLE_TYPE = "Policecar";
+	private static final String VEHICLE_TYPE = "Taxi";
 	private static int TAXI_ID = 0;
 	
 	private final int id;
