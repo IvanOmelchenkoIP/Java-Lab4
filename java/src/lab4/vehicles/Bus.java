@@ -1,6 +1,5 @@
 package lab4.vehicles;
 
-import lab4.exception.PassangerBusyException;
 import lab4.persons.Person;
 
 public final class Bus<T extends Person> extends Vehicle<T> {
