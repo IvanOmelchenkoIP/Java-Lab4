@@ -7,7 +7,7 @@ public class Taxi<T extends Person> extends Car<T> {
 	private static final String VEHICLE_TYPE = "Policecar";
 	private static int TAXI_ID = 0;
 	
-	private int id;
+	private final int id;
 	
 	public Taxi(int seats) {
 		super(seats);

@@ -7,7 +7,7 @@ public class Firetruck<T extends Firefighter> extends Car<T> {
 	private static final String VEHICLE_TYPE = "Firetruck";
 	private static int FIRETRUCK_ID = 0;
 	
-	private int id;
+	private final int id;
 	
 	public Firetruck(int seats) {
 		super(seats);

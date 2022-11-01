@@ -9,7 +9,7 @@ public final class Bus<T extends Person> extends Vehicle<T> {
 	private static final String VEHICLE_TYPE = "Bus";
 	private static int BUS_ID = 0;
 	
-	private int id;
+	private final int id;
 	
 	public Bus(int seats) {
 		super(createSeats(seats));

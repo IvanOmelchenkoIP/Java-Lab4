@@ -7,7 +7,7 @@ public class Policecar<T extends Policeman> extends Car<T> {
 	private static final String VEHICLE_TYPE = "Policecar";
 	private static int POLICECAR_ID = 0;
 	
-	private int id;
+	private final int id;
 	
 	public Policecar(int seats) {
 		super(seats);

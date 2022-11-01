@@ -7,8 +7,8 @@ import lab4.persons.Person;
 
 public abstract class Vehicle<T extends Person> {
 	
-	private int maxSeats;
-	private ArrayList<T> passangers;
+	private final int maxSeats;
+	private final ArrayList<T> passangers;
 	
 	Vehicle(int seats) {
 		maxSeats = seats;
