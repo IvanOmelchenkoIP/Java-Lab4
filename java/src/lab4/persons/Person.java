@@ -2,6 +2,9 @@ package lab4.persons;
 
 public class Person {
 	
+	private static int ID_COUNTER = 0;
+	
+	private int id;
 	private String firstname;
 	private String lastname;
 	
@@ -10,10 +13,11 @@ public class Person {
 	public Person(String fname, String lname) { 
 		firstname = fname;
 		lastname = lname;
+		id = ++Person.ID_COUNTER;
 	}
 	
 	public String getPersonData() {
-		String person = firstname + " " + lastname;
+		String person = firstname + " " + lastname + " " + id;
 		return person;
 	}
 	
