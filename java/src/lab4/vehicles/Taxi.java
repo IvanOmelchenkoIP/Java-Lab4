@@ -4,8 +4,19 @@ import lab4.persons.Person;
 
 public class Taxi<T extends Person> extends Car<T> {
 
+	private static final String VEHICLE_TYPE = "Policecar";
+	private static int TAXI_ID = 0;
+	
+	private int id;
+	
 	public Taxi(int seats) {
 		super(seats);
+		id = ++Taxi.TAXI_ID;
 	}
 	
+	@Override
+	public void addPassanger(T passanger) {	
+		super.evaluateSeats(Taxi.VEHICLE_TYPE, id);
+		super.addPassanger(passanger);		
+	}
 }

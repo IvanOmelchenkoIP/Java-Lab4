@@ -23,14 +23,16 @@ public abstract class Vehicle<T extends Person> {
 		return passangers.size();
 	} 
 
-	public void addPassanger(T passanger) {
-		if (passangers.size() >= maxSeats) throw new VehicleIsFullException("The vehicle is full and can`t take any more passengers!");
-		
+	protected void evaluateSeats(String vehicleType, int id) {
+		if (passangers.size() >= maxSeats) throw new VehicleIsFullException(vehicleType + " " + id + " is full! Can`t add more passengers!");
+	}
+	
+	public void addPassanger(T passanger) {	
 		if (passanger.isPassangerActive()) throw new PassangerBusyException(passanger.getPersonData() + " is in another vehicle!");
 		passanger.setPassangerActive();		
 		passangers.add(passanger);		
 	}
-
+	
 	public void removePassanger(String passangerData) {
 		for(T passanger : passangers) {
 			if (passanger.getPersonData() == passangerData) {
