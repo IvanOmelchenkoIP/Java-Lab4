@@ -36,8 +36,10 @@ public abstract class Vehicle<T extends Person> {
 	}
 	
 	public void removePassanger(String passangerData) {
+		if (passangers.size() == 0) throw new VehicleEmptyException("Cannot remove passangers from an empty vehicle!");
+		
 		for(T passanger : passangers) {
-			if (passanger.getPersonData() == passangerData) {
+			if (passanger.getPersonData().equals(passangerData)) {
 				passanger.setPassangerInactive();
 				passangers.remove(passanger);
 				return;
