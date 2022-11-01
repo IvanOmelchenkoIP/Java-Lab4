@@ -1,6 +1,7 @@
 package lab4.exception;
 
 public final class PassangerIsNotInVehicleException extends RuntimeException {
+	
 	public PassangerIsNotInVehicleException() {
 		super();
 	}
@@ -16,4 +17,5 @@ public final class PassangerIsNotInVehicleException extends RuntimeException {
 	public PassangerIsNotInVehicleException(Throwable ex) {
 		super(ex);
 	}
+	
 }

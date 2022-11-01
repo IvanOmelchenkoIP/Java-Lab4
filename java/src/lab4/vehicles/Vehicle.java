@@ -26,7 +26,7 @@ public abstract class Vehicle<T extends Person> {
 	public void addPassanger(T passanger) {
 		if (passangers.size() >= maxSeats) throw new VehicleIsFullException("The vehicle is full and can`t take any more passengers!");
 		
-		if (passanger.isPassangerActive()) return;
+		if (passanger.isPassangerActive()) throw new PassangerIsInAnotherVehileException(passanger.getPersonData() + " is in another vehicle!");
 		passanger.setPassangerActive();		
 		passangers.add(passanger);		
 	}
