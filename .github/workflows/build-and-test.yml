@@ -25,5 +25,5 @@ jobs:
       - name: Test Persons
         working-directory: ./java/src
         run: |
-         javac -cp "./testing/junit-platform-console-standalone-1.9.0.jar"  ./lab4/persons/Persons.java ./lab4/persons/Policeman.java ./lab4/persons/Firefighter.java ./lab4/tests/PersonTests.java
+         javac -cp "./testing/junit-platform-console-standalone-1.9.0.jar"  ./lab4/persons/Person.java ./lab4/persons/Policeman.java ./lab4/persons/Firefighter.java ./lab4/tests/PersonTests.java
          java -jar ./testing/junit-platform-console-standalone-1.9.0.jar -cp "." --select-class lab4.tests.PersonsTests
