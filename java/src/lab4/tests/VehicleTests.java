@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import lab4.persons.*;
 import lab4.vehicles.*;
+import lab4.exception.*;
 
 class VehicleTests {
 
@@ -70,7 +71,7 @@ class VehicleTests {
 	
 	@Test
 	void TestInfoBus() {
-		String expected = "Bus 1";
+		String expected = "Bus 2";
 		
 		Bus<Person> bus = new Bus<Person>(56);
 		String result = bus.getInfo();
@@ -80,7 +81,7 @@ class VehicleTests {
 	
 	@Test
 	void TestInfoTaxi() {
-		String expected = "Taxi 3";
+		String expected = "Taxi 4";
 		
 		Taxi<Person> taxi = new Taxi<Person>(4);
 		String result = taxi.getInfo();
@@ -106,5 +107,46 @@ class VehicleTests {
 		String result = firetruck.getInfo();
 		
 		assertEquals(expected, result);
+	}
+	
+	@Test
+	void TestTakenSeatsNone() {
+		int expected = 0;
+		
+		Vehicle<Person> vehicle = new Bus<Person>(16);
+		int result = vehicle.getTakenSeats();
+		
+		assertEquals(expected, result);		
+	}
+	
+	@Test
+	void TestTakenSeatsNormal() {
+		int expected = 4;
+		
+		Bus<Person> bus = new Bus<Person>(16);
+		for (int i = 0; i < expected; i++) {
+			Person person = new Person("Name", "Surname");
+			bus.addPassanger(person);
+		}
+		int result = bus.getTakenSeats();
+		
+		assertEquals(expected, result);
+	}
+	
+	@Test
+	void TestTakenSeatsExtra() {
+		String expected = "Cannot add more passengers";
+		
+		Car<Person> taxi = new Taxi<Person>(8);
+		Exception exception = assertThrows(VehicleIsFullException.class, () -> {
+			for (int i = 0; i < 10; i++) {
+				Person person = new Person("Name", "Surname");
+				taxi.addPassanger(person);			
+			}
+		});
+		
+		String message = exception.getMessage();
+		
+		assertTrue(message.contains(expected));
 	}
 }

@@ -26,7 +26,7 @@ public abstract class Vehicle<T extends Person> {
 	} 
 
 	protected void evaluateSeats(String vehicleType, int id) {
-		if (passangers.size() >= maxSeats) throw new VehicleIsFullException(vehicleType + " " + id + " is full! Can`t add more passengers!");
+		if (passangers.size() >= maxSeats) throw new VehicleIsFullException(vehicleType + " " + id + " is full! Cannot add more passengers!");
 	}
 	
 	public void addPassanger(T passanger) {	
