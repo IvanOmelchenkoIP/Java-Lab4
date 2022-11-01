@@ -15,6 +15,8 @@ public abstract class Vehicle<T extends Person> {
 		passangers = new ArrayList<T>();
 	}
 	
+	public abstract String getInfo();
+	
 	public int getMaxSeats() {
 		return maxSeats;
 	}

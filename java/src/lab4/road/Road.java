@@ -1,6 +1,8 @@
 package lab4.road;
 
 import java.util.ArrayList;
+
+import lab4.exception.VehicleEmptyException;
 import lab4.vehicles.*;
 
 public class Road {
@@ -14,6 +16,7 @@ public class Road {
 	}
 	
 	public void addVehicleToRoad(Vehicle<?> vehicle) {
+		if (vehicle.getTakenSeats() == 0) throw new VehicleEmptyException(vehicle.getInfo() + "is empty!");
 		vehicles.add(vehicle);
 	}
 	

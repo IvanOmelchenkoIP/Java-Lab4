@@ -15,6 +15,12 @@ public class Firetruck<T extends Firefighter> extends Car<T> {
 	}
 	
 	@Override
+	public String getInfo() {
+		String info = Firetruck.VEHICLE_TYPE + " " + id;
+		return info;
+	}
+	
+	@Override
 	public void addPassanger(T passanger) {	
 		super.evaluateSeats(Firetruck.VEHICLE_TYPE, id);
 		super.addPassanger(passanger);		

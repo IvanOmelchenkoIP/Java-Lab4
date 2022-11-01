@@ -15,6 +15,12 @@ public class Policecar<T extends Policeman> extends Car<T> {
 	}
 	
 	@Override
+	public String getInfo() {
+		String info = Policecar.VEHICLE_TYPE + " " + id;
+		return info;
+	}
+	
+	@Override
 	public void addPassanger(T passanger) {	
 		super.evaluateSeats(Policecar.VEHICLE_TYPE, id);
 		super.addPassanger(passanger);		

@@ -15,6 +15,12 @@ public class Taxi<T extends Person> extends Car<T> {
 	}
 	
 	@Override
+	public String getInfo() {
+		String info = Taxi.VEHICLE_TYPE + " " + id;
+		return info;
+	}
+	
+	@Override
 	public void addPassanger(T passanger) {	
 		super.evaluateSeats(Taxi.VEHICLE_TYPE, id);
 		super.addPassanger(passanger);		

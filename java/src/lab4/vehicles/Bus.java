@@ -21,6 +21,12 @@ public final class Bus<T extends Person> extends Vehicle<T> {
 	}
 	
 	@Override
+	public String getInfo() {
+		String info = Bus.VEHICLE_TYPE + " " + id;
+		return info;
+	}
+	
+	@Override
 	public void addPassanger(T passanger) {	
 		super.evaluateSeats(Bus.VEHICLE_TYPE, id);
 		super.addPassanger(passanger);		
