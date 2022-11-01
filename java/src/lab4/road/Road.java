@@ -16,7 +16,7 @@ public class Road {
 	}
 	
 	public void addVehicleToRoad(Vehicle<?> vehicle) {
-		if (vehicle.getTakenSeats() == 0) throw new VehicleEmptyException(vehicle.getInfo() + "is empty!");
+		if (vehicle.getTakenSeats() == 0) throw new VehicleEmptyException(vehicle.getInfo() + "is empty and cannot enter the road!");
 		vehicles.add(vehicle);
 	}
 	
