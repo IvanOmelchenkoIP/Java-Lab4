@@ -16,25 +16,5 @@ abstract class Car<T extends Person> extends Vehicle<T> {
 		if (reqSeats > Car.MAX_CAR_SEATS) return Car.MAX_CAR_SEATS;
 		return reqSeats;
 	}
-
-	@Override
-	public void addPassanger(T passanger) {
-		super.addPassanger(passanger);
-	}
-
-	@Override
-	public void removePassanger(String passangerData) {
-		super.removePassanger(passangerData);
-	}
-
-	@Override
-	public int getMaxSeats() {
-		return super.getMaxSeats();
-	}
-
-	@Override
-	public int getTakenSeats() {
-		return super.getTakenSeats();
-	} 
 	
 }

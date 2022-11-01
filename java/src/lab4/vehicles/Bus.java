@@ -13,25 +13,5 @@ public final class Bus<T extends Person> extends Vehicle<T> {
 	protected static int createSeats(int reqSeats) {
 		return reqSeats < Bus.MIN_BUS_SEATS ? Bus.MIN_BUS_SEATS : reqSeats;
 	}
-
-	@Override
-	public void addPassanger(T passanger) {
-		super.addPassanger(passanger);
-	}
-
-	@Override
-	public void removePassanger(String passangerData) {
-		super.removePassanger(passangerData);
-	}
-
-	@Override
-	public int getMaxSeats() {
-		return super.getMaxSeats();
-	}
-
-	@Override
-	public int getTakenSeats() {
-		return super.getTakenSeats();
-	} 
 	
 }
