@@ -6,10 +6,35 @@ import org.junit.jupiter.api.Test;
 import lab4.persons.*;
 
 class PersonsTest {
+	
+	@Test
+	void TestClassTranslationCorrect() {
+		String expected = "Firefighter Name Surname 2";
+		
+		Person person = new Firefighter("Name", "Surname");
+		String result = ((Firefighter)person).getPersonData();
+		
+		assertEquals(expected, result);
+	}
+	
+	@Test
+	void TestClassTranslationIncorrect() {
+		String expected = "cannot be cast";
+		
+		Person person = new Person("Name", "Surname");
+		System.out.println(person.getPersonData());
+		Exception exception = assertThrows(ClassCastException.class, () -> { 
+			String result = ((Firefighter)person).getPersonData();
+		});
+		
+		String message = exception.getMessage();		
+		
+		assertTrue(message.contains(expected));
+	}
 
 	@Test
-	void PersonTestData() {
-		String expected = "Name Surname 1";
+	void TestPersonData() {
+		String expected = "Name Surname 2";
 		
 		Person person = new Person("Name", "Surname");
 		String result = person.getPersonData();
@@ -18,7 +43,7 @@ class PersonsTest {
 	}
 	
 	@Test
-	void PolicemanTestData() {
+	void TestPolicemanData() {
 		String expected = "Policeman Name Surname 1";
 		
         Policeman person = new Policeman("Name", "Surname");
@@ -28,7 +53,7 @@ class PersonsTest {
 	}
 	
 	@Test
-	void FirefighterTestData() {
+	void TestFirefighterData() {
 		String expected = "Firefighter Name Surname 1";
 		
 		Person person = new Firefighter("Name", "Surname");
@@ -36,7 +61,5 @@ class PersonsTest {
 		
 		assertEquals(expected, result);
 	}
-	
-	
 
 }
