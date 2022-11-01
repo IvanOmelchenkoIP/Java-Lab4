@@ -1,6 +1,7 @@
 package lab4.vehicles;
 
 import java.util.ArrayList;
+import lab4.exception.*;
 
 import lab4.persons.Person;
 
@@ -13,10 +14,18 @@ public abstract class Vehicle<T extends Person> {
 		maxSeats = seats;
 		passangers = new ArrayList<T>();
 	}
+	
+	public int getMaxSeats() {
+		return maxSeats;
+	}
 
-	public void addPassanger(T passanger) {
+	public int getTakenSeats() {
+		return passangers.size();
+	} 
+
+	public void addPassanger(T passanger) throws VehicleIsFullException {
 		if (passangers.size() >= maxSeats) {
-			throw new Error();
+			throw new VehicleIsFullException("The vehicle is full and can`t take any more passengers!");
 		}
 		
 		if (passanger.isPassangerActive()) return;
@@ -32,14 +41,7 @@ public abstract class Vehicle<T extends Person> {
 				return;
 			}
 		}
-		throw new Error();
+		throw new IllegalArgumentException("The passanger " + passangerData + " is not in the vehicle!");
 	}
 
-	public int getMaxSeats() {
-		return maxSeats;
-	}
-
-	public int getTakenSeats() {
-		return passangers.size();
-	} 
 }
