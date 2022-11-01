@@ -16,6 +16,12 @@ public class Person {
 		id = ++Person.ID_COUNTER;
 	}
 	
+	protected Person(String fname, String lname, int jobId) {
+		firstname = fname;
+		lastname = lname;
+		id = jobId;
+	}
+	
 	public String getPersonData() {
 		String person = firstname + " " + lastname + " " + id;
 		return person;
