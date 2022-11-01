@@ -26,7 +26,7 @@ public abstract class Vehicle<T extends Person> {
 	public void addPassanger(T passanger) {
 		if (passangers.size() >= maxSeats) throw new VehicleIsFullException("The vehicle is full and can`t take any more passengers!");
 		
-		if (passanger.isPassangerActive()) throw new PassangerIsInAnotherVehileException(passanger.getPersonData() + " is in another vehicle!");
+		if (passanger.isPassangerActive()) throw new PassangerBusyException(passanger.getPersonData() + " is in another vehicle!");
 		passanger.setPassangerActive();		
 		passangers.add(passanger);		
 	}
@@ -39,7 +39,7 @@ public abstract class Vehicle<T extends Person> {
 				return;
 			}
 		}
-		throw new PassangerIsNotInVehicleException("The passanger " + passangerData + " is not in the vehicle!");
+		throw new PassangerNotInVehicleException("The passanger " + passangerData + " is not in the vehicle!");
 	}
 
 }
